@@ -120,7 +120,7 @@ class MyRecommendationAgent(RecommendationAgent):
                     item = self.interaction_tool.get_item(item_id=self.task['candidate_list'][n_bus])
                     keys_to_extract = ['item_id', 'name','stars','review_count','attributes','title', 'average_rating', 'rating_number','description','ratings_count','title_without_series']
                     filtered_item = {key: item[key] for key in keys_to_extract if key in item}
-                item_list.append(filtered_item)
+                    item_list.append(filtered_item)
                 # print(item)
             elif 'review' in sub_task['description']:
                 history_review = str(self.interaction_tool.get_reviews(user_id=self.task['user_id']))
